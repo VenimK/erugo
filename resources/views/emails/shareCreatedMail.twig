@@ -1,6 +1,6 @@
 {% extends 'emails/layout' %}
 
-{% block header %} Je hebt bestanden om te downloaden
+{% block header %} {% if share.file_count == 1 %}{{ sender_name }} heeft 1 bestand met je gedeeld{% else %}Je hebt bestanden om te downloaden{% endif %}
 {% endblock %}
 
 {% block content %}
