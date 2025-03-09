@@ -1,14 +1,14 @@
 {% extends 'emails/layout' %}
 
-{% block header %}Share Downloaded
+{% block header %}Gedeelde Bestanden Gedownload
 {% endblock %}
 
 {% block content %}
-	<h2>Hi
+	<h2>Hallo
 		{{ share.user.name }},</h2>
-	<p>Just thought you'd like to know that your share "{{ share.name }}" was downloaded.</p>
+	<p>We wilden je laten weten dat je gedeelde bestanden "{{ share.name }}" zijn gedownload.</p>
 	<p>
-		<small>We'll only send this the first time a share is downloaded.</small>
+		<small>We sturen dit bericht alleen de eerste keer dat een gedeeld bestand wordt gedownload.</small>
 	</p>
 {% endblock %}
 
@@ -16,5 +16,5 @@
 	{{ settings.application_url }}/shares/{{ share.long_id }}
 {% endblock %}
 {% block action_text %}
-	View Share
+	Bekijk Gedeelde Bestanden
 {% endblock %}

@@ -1,18 +1,18 @@
 {% extends 'emails/layout' %}
 
-{% block header %}Account Created! Set your password
+{% block header %}Account Aangemaakt! Stel je wachtwoord in
 {% endblock %}
 
 {% block content %}
-	<h2>Hi
+	<h2>Hallo
 		{{ user.name }},</h2>
-	<p>We've created an account for you on {{ settings.application_name }}.</p>
-  <p>Please set your password to get started.</p>
+	<p>We hebben een account voor je aangemaakt op {{ settings.application_name }}.</p>
+  <p>Stel je wachtwoord in om te beginnen.</p>
 {% endblock %}
 
 {% block action_url %}
 	{{ settings.application_url }}/reset-password/{{ token }}
 {% endblock %}
 {% block action_text %}
-	Set Password
+	Wachtwoord Instellen
 {% endblock %}

@@ -1,18 +1,18 @@
 {% extends 'emails/layout' %}
 
-{% block header %} You have files to download
+{% block header %} Je hebt bestanden om te downloaden
 {% endblock %}
 
 {% block content %}
-	<h2>Hi
+	<h2>Hallo
 		{{ recipient_name }},</h2>
-	<p>{{ sender_name }} shared {{ share.file_count }} file{{ share.file_count == 1 ? '' : 's' }} with you.</p>
-  <p>Click the button below to access your files.</p>
+	<p>{{ sender_name }} heeft {{ share.file_count }} bestand{{ share.file_count == 1 ? '' : 'en' }} met je gedeeld.</p>
+  <p>Klik op de onderstaande knop om toegang te krijgen tot je bestanden.</p>
 {% endblock %}
 
 {% block action_url %}
 	{{ settings.application_url }}/shares/{{ share.long_id }}
 {% endblock %}
 {% block action_text %}
-	Download Files
+	Bestanden Downloaden
 {% endblock %}

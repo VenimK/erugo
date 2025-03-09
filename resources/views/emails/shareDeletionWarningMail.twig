@@ -1,32 +1,32 @@
 {% extends 'emails/layout' %}
 
 {% block header %}
-	Your share will be deleted soon
+	Je gedeelde bestanden worden binnenkort verwijderd
 {% endblock %}
 
 {% block content %}
-	<h2>Hi
+	<h2>Hallo
 		{{ share.user.first_name }},</h2>
-	<p>This is a reminder that your share ({{ share.name }}
+	<p>Dit is een herinnering dat je gedeelde bestanden ({{ share.name }}
 		/
-		{{ share.long_id }}) will be deleted in
-		{{ deletes_in }}.</p>
+		{{ share.long_id }}) over
+		{{ deletes_in }} zullen worden verwijderd.</p>
 
 	{% if share.download_count > 0 %}
-		<p>The share has been downloaded
+		<p>De gedeelde bestanden zijn
 			{{ share.download_count }}
-			time{{ share.download_count == 1 ? '' : 's' }}.</p>
+			keer{{ share.download_count == 1 ? '' : 's' }} gedownload.</p>
 	{% else %}
-		<p>The share wasn't downloaded.</p>
+		<p>De gedeelde bestanden zijn niet gedownload.</p>
 	{% endif %}
 
-	<p>You can revive it in the "My Shares" section of the app. This will prevent it from being deleted.</p>
+	<p>Je kunt ze opnieuw activeren in het gedeelte "Mijn Gedeelde Bestanden" van de app. Dit voorkomt dat ze worden verwijderd.</p>
 {% endblock %}
 
 {% block action_url %}
 	{{ settings.application_url }}
 {% endblock %}
 {% block action_text %}
-	Visit
+	Bezoek
 	{{ settings.application_name }}
 {% endblock %}

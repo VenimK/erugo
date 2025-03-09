@@ -1,21 +1,21 @@
 {% extends 'emails/layout' %}
 
 {% block header %}
-	Your share is expiring soon
+	Je gedeelde bestanden verlopen binnenkort
 {% endblock %}
 
 {% block content %}
-	<h2>Hi
+	<h2>Hallo
 		{{ share.user.first_name }},</h2>
-	<p>This is a reminder that your share ({{ share.name }} / {{ share.long_id }}) will expire in
-		{{ share_expires_in }}.</p>
-	<p>You can extend the expiry date in the "My Shares" section of the app.</p>
+	<p>Dit is een herinnering dat je gedeelde bestanden ({{ share.name }} / {{ share.long_id }}) over
+		{{ share_expires_in }} zullen verlopen.</p>
+	<p>Je kunt de vervaldatum verlengen in het gedeelte "Mijn Gedeelde Bestanden" van de app.</p>
 {% endblock %}
 
 {% block action_url %}
 	{{ settings.application_url }}
 {% endblock %}
 {% block action_text %}
-	Visit
+	Bezoek
 	{{ settings.application_name }}
 {% endblock %}

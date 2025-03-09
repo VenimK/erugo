@@ -1,31 +1,31 @@
 {% extends 'emails/layout' %}
 
 {% block header %}
-	Your share has been deleted
+	Je gedeelde bestanden zijn verwijderd
 {% endblock %}
 
 {% block content %}
-	<h2>Hi
+	<h2>Hallo
 		{{ share.user.first_name }},</h2>
-	<p>This is a reminder that your share ({{ share.name }}
+	<p>Dit is een melding dat je gedeelde bestanden ({{ share.name }}
 		/
-		{{ share.long_id }}) has been deleted.</p>
+		{{ share.long_id }}) zijn verwijderd.</p>
 
 	{% if share.download_count > 0 %}
-		<p>The share has been downloaded
+		<p>De gedeelde bestanden zijn
 			{{ share.download_count }}
-			time{{ share.download_count == 1 ? '' : 's' }}.</p>
+			keer{{ share.download_count == 1 ? '' : 's' }} gedownload.</p>
 	{% else %}
-		<p>The share wasn't downloaded.</p>
+		<p>De gedeelde bestanden zijn niet gedownload.</p>
 	{% endif %}
 
-	<p>This share can no longer be revived.</p>
+	<p>Deze gedeelde bestanden kunnen niet meer worden hersteld.</p>
 {% endblock %}
 
 {% block action_url %}
 	{{ settings.application_url }}
 {% endblock %}
 {% block action_text %}
-	Visit
+	Bezoek
 	{{ settings.application_name }}
 {% endblock %}

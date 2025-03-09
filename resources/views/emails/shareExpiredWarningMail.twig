@@ -1,31 +1,31 @@
 {% extends 'emails/layout' %}
 
 {% block header %}
-	Your share has expired
+	Je gedeelde bestanden zijn verlopen
 {% endblock %}
 
 {% block content %}
-	<h2>Hi
+	<h2>Hallo
 		{{ share.user.first_name }},</h2>
-	<p>This is a reminder that your share ({{ share.name }}
+	<p>Dit is een herinnering dat je gedeelde bestanden ({{ share.name }}
 		/
-		{{ share.long_id }}) has expired.</p>
+		{{ share.long_id }}) zijn verlopen.</p>
 
 	{% if share.download_count > 0 %}
-		<p>The share has been downloaded
+		<p>De gedeelde bestanden zijn
 			{{ share.download_count }}
-			time{{ share.download_count == 1 ? '' : 's' }}.</p>
+			keer{{ share.download_count == 1 ? '' : 's' }} gedownload.</p>
 	{% else %}
-		<p>The share wasn't downloaded.</p>
+		<p>De gedeelde bestanden zijn niet gedownload.</p>
 	{% endif %}
 
-	<p>You can revive it in the "My Shares" section of the app.</p>
+	<p>Je kunt ze opnieuw activeren in het gedeelte "Mijn Gedeelde Bestanden" van de app.</p>
 {% endblock %}
 
 {% block action_url %}
 	{{ settings.application_url }}
 {% endblock %}
 {% block action_text %}
-	Visit
+	Bezoek
 	{{ settings.application_name }}
 {% endblock %}
